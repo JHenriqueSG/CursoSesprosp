@@ -9,10 +9,19 @@ namespace CursoSesprosp.Models
     public class Context : DbContext
     {
 
-        public DbSet<Categoria> categorias { get; set;}
+        public virtual DbSet<Categoria> Categorias { get; set;}
         //responsável por configurar o Entity framework
-        public DbSet<Produto> Produtos { get; set;}
+        public virtual DbSet<Produto> Produtos { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer(connectionString: @"Server=(localdb)\mssqllocaldb;Database=CursoSesprosp;Integrated Security=True");
 
+        public void FindAsync(int v)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void SetModified(object entity)
+        {
+            Entry(entity).State = EntityState.Modified;
+        }
     }
 }

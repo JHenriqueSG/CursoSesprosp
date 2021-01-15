@@ -47,7 +47,7 @@ namespace CursoSesprosp.Controllers
         // GET: Produtos/Create
         public IActionResult Create()
         {
-            ViewData["CategoriaId"] = new SelectList(_context.categorias, "Id", "Descricao");
+            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "Id", "Descricao");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace CursoSesprosp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoriaId"] = new SelectList(_context.categorias, "Id", "Descricao", produto.CategoriaId);
+            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "Id", "Descricao", produto.CategoriaId);
             return View(produto);
         }
 
@@ -81,7 +81,7 @@ namespace CursoSesprosp.Controllers
             {
                 return NotFound();
             }
-            ViewData["CategoriaId"] = new SelectList(_context.categorias, "Id", "Descricao", produto.CategoriaId);
+            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "Id", "Descricao", produto.CategoriaId);
             return View(produto);
         }
 
@@ -117,7 +117,7 @@ namespace CursoSesprosp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoriaId"] = new SelectList(_context.categorias, "Id", "Descricao", produto.CategoriaId);
+            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "Id", "Descricao", produto.CategoriaId);
             return View(produto);
         }
 

@@ -12,7 +12,9 @@ namespace CursoAPI
 {
     public class Program
     {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public static void Main(string[] args)
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
             CreateHostBuilder(args).Build().Run();
         }
